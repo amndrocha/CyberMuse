@@ -1,0 +1,14 @@
+{
+    "home": {
+        "description": {
+            "p1": "Estamos construindo um",
+            "p2": "jogo de moda",
+            "p3": "que se expanda até onde a sua criatividade alcança <3 Nele, você encontrará possibilidades infinitas com a sua Musa, desde a criação de itens inovadores até a oportunidade de adquirir peças exclusivas na loja de outros usuários.",
+            "p4": "Tudo isso acontece em uma comunidade dinâmica, onde pessoas com gostos e interesses semelhantes se reúnem e competem diariamente! Veja como planejamos alguns dos recursos do jogo:"
+        },
+        "email": {
+            "placeholder": "fulanodetal@gmail.com",
+            "confirmation": "Enviado <3"
+        }
+    }
+}

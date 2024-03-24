@@ -1,12 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./templates/Home";
 import About from "./templates/About";
-import Navbar from "./Navbar";
+import Header from "./templates/Header";
+import "./App.scss"
 
 function App() {
   return (
     <>
-      <Navbar />
+      <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

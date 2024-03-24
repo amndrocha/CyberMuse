@@ -1,0 +1,23 @@
+.header {
+    position: absolute;
+    width: calc(100% - 90px);
+    padding-right: 90px;
+    height: 90px;
+    gap: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 24px;
+    background-color: var(--color-background);
+    color: var(--color-text-main);
+}
+.language-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.unselected-language {
+    cursor: pointer;
+    color: #908989;    
+}
+

@@ -1,6 +1,14 @@
 {
-    "description": {
-        "part1": "Edit <1>src/App.js</1> and save to reload.",
-        "part2": "Lern React"
+    "home": {
+        "description": {
+            "p1": "We are building a",
+            "p2": "fashion game",
+            "p3": "that expands as far as your creativity can reach <3 In it, you will find endless possibilities with your Muse, from creating innovative items to the opportunity to purchase exclusive pieces at store from other users.",
+            "p4": "All of this happens in a dynamic community, where people with similar tastes and interests come together and compete daily! See how we planned some of the game's features:"
+        },
+        "email": {
+            "placeholder": "johndoe@gmail.com",
+            "confirmation": "Sent <3"
+        }
     }
 }

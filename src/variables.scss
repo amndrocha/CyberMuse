@@ -1,0 +1,17 @@
+.theme {
+    --color-main: #f52e91;
+}
+
+.light-theme {
+    @extend .theme;
+    --color-background: white;
+    --color-text-main: black;
+
+}
+
+.dark-theme {
+    @extend .theme;
+    --color-background: black;
+    --color-text-main: white;    
+}
+
