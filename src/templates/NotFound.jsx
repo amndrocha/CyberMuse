@@ -1,14 +1,14 @@
 import { useTranslation } from "react-i18next";
 import { useSelector } from "react-redux";
 
-export default function About() {
+export default function NotFound() {
   const { t } = useTranslation();
   const theme = useSelector(state => state.shared.theme);
   return (
     <div className={theme} style={{height: '100%'}}>
       <div className="page">
         <div className="content">
-          {t('home.error.notFound')}              
+          {t('error.notFound')} 
         </div>
       </div>
     </div>

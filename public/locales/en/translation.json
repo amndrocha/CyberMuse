@@ -10,5 +10,12 @@
             "placeholder": "johndoe@gmail.com",
             "confirmation": "Sent <3"
         }
+    },
+    "header": {
+        "home": "Home",
+        "about": "About"
+    },
+    "error": {
+        "notFound": "Page not found :("
     }
 }

@@ -51,7 +51,6 @@ function Home() {
                 {t('home.description.p4')}
               </div>
             </div>
-
             <div className='input-box'>
                 <input type='text' value={input} onChange={(e) => setInput(e.target.value)} placeholder={emailSent ? t('home.email.confirmation') : t('home.email.placeholder')} disabled={emailSent}/>
                 <button className={emailSent ? 'none' : 'visible'} onClick={insertEmail}>ok {heart}</button>

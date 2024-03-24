@@ -10,5 +10,12 @@
             "placeholder": "fulanodetal@gmail.com",
             "confirmation": "Enviado <3"
         }
+    },
+    "header": {
+        "home": "Início",
+        "about": "Sobre"
+    },
+    "error": {
+        "notFound": "Página não encontrada :("
     }
 }

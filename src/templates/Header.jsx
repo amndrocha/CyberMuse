@@ -7,7 +7,7 @@ import { switchTheme } from "../features/sharedSlice";
 
 export default function Header() {
     const dispatch = useDispatch();
-    const { i18n } = useTranslation();
+    const { t, i18n } = useTranslation();
     const [language, setLanguage] = useState(i18n.resolvedLanguage);
 
     useEffect(() => {
@@ -18,8 +18,8 @@ export default function Header() {
     return (
         <div className={theme} style={{width: '100%'}}>
             <div className="header">
-                <div className="header-link"><Link to="/">Home</Link></div>
-                <div className="header-link"><Link to="/about">About</Link></div>
+                <div className="header-link"><Link to="/">{t('header.home')}</Link></div>
+                <div className="header-link"><Link to="/about">{t('header.about')}</Link></div>
                 <div className="language-buttons default-cursor">
                     <div onClick={() => i18n.changeLanguage('pt')}
                     className={language === 'pt' ? 'selected-language' : 'unselected-language'}
