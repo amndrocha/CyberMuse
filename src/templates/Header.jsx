@@ -24,12 +24,15 @@ export default function Header() {
                     <div onClick={() => i18n.changeLanguage('pt')}
                     className={language === 'pt' ? 'selected-language' : 'unselected-language'}
                     >PT</div>
-                    |
+                    <span className="no-selection">|</span>
                     <div onClick={() => i18n.changeLanguage('en')}
                     className={language === 'en' ? 'selected-language' : 'unselected-language'}
                     >EN</div>
                 </div>
-                <div onClick={() => dispatch(switchTheme())}>☼</div>
+                <div className="theme-button center"
+                onClick={() => dispatch(switchTheme())}>
+                    {theme === 'dark-theme' ? '☼' : '☾'}
+                </div>
             </div>            
         </div>
         

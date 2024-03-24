@@ -47,8 +47,18 @@ button {
     display: none;
 }
 
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .default-cursor {
     cursor: default;
+}
+
+.no-selection {    
+    user-select: none;
 }
 
 .page {
