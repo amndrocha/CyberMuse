@@ -1,7 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import Home from "./templates/Home";
 import About from "./templates/About";
-import Contact from "./templates/Contact";
 import Navbar from "./Navbar";
 
 function App() {
