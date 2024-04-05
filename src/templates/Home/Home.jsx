@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { supabase } from '../supabase';
-import './Home.scss'
+import { supabase } from '../../supabase';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
+import { Blur } from '../../components/Blur/Blur';
 
 function Home() {
   const { t } = useTranslation();
@@ -32,31 +32,18 @@ function Home() {
   const theme = useSelector(state => state.shared.theme);
   const isDark = theme === 'dark-theme';
   return (
-    <div className={theme} style={{height: '100%'}}>
-      <div className='page'>
-        <div className='content'>
-            <div className='logo-box' style={{filter: isDark ? 'invert(1)' : 'none'}}>
-                <div className='logo'>
-                <img className='logo-stars' src='./assets/stars.png'/>
-                <div className='cyber'>Cyber</div>
-                <div className='muse'>Muse</div>
-                </div>
+    <div className={theme+' page'} style={{height: '100%'}}>
+        <div className='page-content'>
+            <div className='center' style={{filter: isDark ? 'invert(1)' : 'none', height: 'var(--logo-height)'}}>
+              <img className='max-width opacity-0' src='assets/logo.png'/>
+              <Blur size='var(--logo-height)' color='var(--color-main)'/>
+              <img className='max-width absolute' src='assets/logo.png'/>
             </div>
-
-            <div className='home-description'>
-              <div className='paragraph'>
-                {t('home.description.p1')} <b>{t('home.description.p2')}</b> {t('home.description.p3')}              
-              </div>
-              <div className='paragraph'>
-                {t('home.description.p4')}
-              </div>
-            </div>
-            <div className='input-box'>
+            <div className='center max-width'>
                 <input type='text' value={input} onChange={(e) => setInput(e.target.value)} placeholder={emailSent ? t('home.email.confirmation') : t('home.email.placeholder')} disabled={emailSent}/>
                 <button className={emailSent ? 'none' : 'visible'} onClick={insertEmail}>ok {heart}</button>
             </div>
-        </div>
-      </div>      
+        </div>    
     </div>
 
   )

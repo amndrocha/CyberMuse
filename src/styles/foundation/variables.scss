@@ -1,0 +1,31 @@
+.theme {
+    --logo-height: 300px;
+    //padding
+    --page-padding-l: 10rem;
+    --page-padding-m: 5rem;
+    --page-padding-s: 0.5rem;
+
+    --padding-xs: 0.375rem;
+    --padding-s: 0.625rem;
+    //color
+    --color-main: #F895C5;
+    --color-main-darker: #af5480;
+    --color-main-lighter: #ffc2e0;
+    --color-main-contrast: black;
+    --color-text-disabled: grey;
+}
+
+.light-theme {
+    @extend .theme;
+    --color-contrast: black;
+    --color-background: white;
+    --color-text-main: black;
+}
+
+.dark-theme {
+    @extend .theme;
+    --color-contrast: white;
+    --color-background: black;
+    --color-text-main: white;  
+}
+

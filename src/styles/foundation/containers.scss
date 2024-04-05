@@ -1,0 +1,75 @@
+.d-flex {
+    display: flex;
+}
+
+.d-none {
+    display: none;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.justify-end {
+    justify-content: flex-end;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.max-width {
+    width: 100%;
+}
+
+.hug-width {
+    width: fit-content;
+}
+
+.max-height {
+    width: 100%;
+}
+
+.hug-height {
+    height: fit-content;
+}
+
+.absolute {
+    position: absolute !important;
+}
+
+.fixed-top {
+    position: fixed !important;
+    top:0;
+}
+
+.fixed-bottom {
+    position: fixed !important;
+    bottom: 0;
+}
+
+
+//////////////
+
+.clip {
+    overflow: clip;
+}
+
+.clipy {
+    overflow-y: clip;
+}

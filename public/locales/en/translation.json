@@ -8,7 +8,7 @@
         },
         "email": {
             "placeholder": "johndoe@gmail.com",
-            "confirmation": "Sent <3"
+            "confirmation": "E-mail sent! Thank you <3"
         }
     },
     "header": {

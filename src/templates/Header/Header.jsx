@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import './Header.scss';
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { switchTheme } from "../features/sharedSlice";
+import { switchTheme } from "../../features/sharedSlice";
 
 export default function Header() {
     const dispatch = useDispatch();
@@ -16,20 +15,23 @@ export default function Header() {
 
     const theme = useSelector(state => state.shared.theme);
     return (
-        <div className={theme} style={{width: '100%'}}>
-            <div className="header">
-                <div className="header-link"><Link to="/">{t('header.home')}</Link></div>
-                <div className="header-link"><Link to="/about">{t('header.about')}</Link></div>
-                <div className="language-buttons default-cursor">
+        <div className={theme} 
+        style={{width: '100%', backgroundColor: 'var(--color-background)'}}
+        >
+            <div className="header max-width d-flex justify-end g-1 py-1 px-3">
+                <Link to="/">{t('header.home')}</Link>
+                <Link to="/about">{t('header.about')}</Link>
+                <div className="d-flex hug-width g-0">
                     <div onClick={() => i18n.changeLanguage('pt')}
-                    className={language === 'pt' ? 'selected-language' : 'unselected-language'}
+                    className={language === 'pt' ? '' : 'cursor-pointer disabled-text'}
                     >PT</div>
                     <span className="no-selection">|</span>
                     <div onClick={() => i18n.changeLanguage('en')}
-                    className={language === 'en' ? 'selected-language' : 'unselected-language'}
+                    className={language === 'en' ? '' : 'cursor-pointer disabled-text'}
                     >EN</div>
                 </div>
-                <div className="theme-button center"
+                <div className="no-selection center"
+                style={{lineHeight: theme == 'dark-theme' ? '' : '10px', width: '1rem'}}
                 onClick={() => dispatch(switchTheme())}>
                     {theme === 'dark-theme' ? '☼' : '☾'}
                 </div>

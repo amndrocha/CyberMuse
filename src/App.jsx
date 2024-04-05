@@ -1,9 +1,8 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./templates/Home";
-import About from "./templates/About";
-import Header from "./templates/Header";
-import "./App.scss"
-import NotFound from "./templates/NotFound";
+import Home from "./templates/Home/Home";
+import About from "./templates/About/About";
+import Header from "./templates/Header/Header";
+import NotFound from "./templates/NotFound/NotFound";
 
 function App() {
   return (

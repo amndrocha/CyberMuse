@@ -1,0 +1,84 @@
+@use 'foundation/variables.scss';
+@use 'foundation/spacing.scss';
+@use 'foundation/containers.scss';
+@use 'foundation/interaction.scss';
+@use 'foundation/typography.scss';
+@use 'foundation/filters.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    gap: 0;
+    box-sizing: border-box;
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--color-text-main);
+    position: static;
+}
+
+html {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#root {
+    width: 100vw;
+    height: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: var(--color-background);
+}
+
+input {
+    background-color: #fff;
+    border: none;
+    border-radius: 20px;
+    border: 1px solid var(--color-contrast);
+    padding: var(--padding-xs) var(--padding-s) !important;
+}
+
+button {
+    white-space: nowrap;
+    border-radius: 20px;
+    border: 2px solid var(--color-main);
+    background-color: var(--color-main);
+    color: var(--color-main-contrast) !important;
+    padding: var(--padding-xs) var(--padding-s) !important;
+    border: 1px solid var(--color-contrast);
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--color-main-lighter);
+}
+
+button:active {
+    background-color: var(--color-main-darker);
+}
+
+.none {
+    display: none;
+}
+
+.page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: var(--color-background);
+    overflow-y: auto;
+    padding: 0 var(--page-padding-l);
+}
+
+.page-content {
+    position: relative;
+    width: 500px;
+    max-width: 100%;
+}
