@@ -2,18 +2,15 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { switchTheme } from "../../features/sharedSlice";
+import { defineDevice, switchTheme } from "../../features/sharedSlice";
 
 export default function Header() {
     const dispatch = useDispatch();
     const { t, i18n } = useTranslation();
     const [language, setLanguage] = useState(i18n.resolvedLanguage);
-    let device = '';
 
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-        device = 'mobile';
-    }else{
-        device = 'not mobile';
+        dispatch(defineDevice());
     }
 
     useEffect(() => {
@@ -21,12 +18,12 @@ export default function Header() {
     }, [i18n.resolvedLanguage]);
 
     const theme = useSelector(state => state.shared.theme);
+    const device = useSelector(state => state.shared.device);
     return (
-        <div className={theme} 
+        <div className={theme+' '+device} 
         style={{width: '100%', backgroundColor: 'var(--color-background)'}}
         >
             <div className="header max-width d-flex justify-end g-1 py-1 px-3 sticky-top">
-                <div>{device}</div>
                 <Link to="/">{t('header.home')}</Link>
                 <Link to="/about">{t('header.about')}</Link>
                 <div className="d-flex hug-width g-0">

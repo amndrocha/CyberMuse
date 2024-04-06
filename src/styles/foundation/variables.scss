@@ -1,5 +1,7 @@
 .theme {
-    --logo-height: 255px;
+    // screen size
+    --sm: 375px;
+    --m: 667 px;
     //padding
     --page-padding-l: 10rem;
     --page-padding-m: 5rem;
@@ -13,6 +15,9 @@
     --color-main-lighter: #ffc2e0;
     --color-main-contrast: black;
     --color-text-disabled: grey;
+    
+    ///////////////////////////////////////////
+    --logo-height: 255px; 
 }
 
 .light-theme {
