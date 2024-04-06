@@ -2,10 +2,19 @@
     cursor: default;
 }
 
-.cursor-pointer {
+.click{
     cursor: pointer;
+    pointer-events: auto;
 }
 
 .no-selection {    
     user-select: none;
+}
+
+.pointer-events-none {
+    pointer-events: none;
+}
+
+.pointer-events-auto {
+    pointer-events: auto;
 }

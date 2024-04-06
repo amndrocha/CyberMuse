@@ -33,17 +33,7 @@ function Home() {
   const isDark = theme === 'dark-theme';
   return (
     <div className={theme+' page'} style={{height: '100%'}}>
-        <div className='page-content'>
-            <div className='center'>
-              <img className='max-width opacity-0' src='assets/logo.png'/>
-              <Blur size='var(--logo-height)' color='var(--color-main)' isDark={isDark}/>
-              <img className={isDark ? 'max-width absolute invert' : 'max-width absolute'} src='assets/logo.png'/>
-            </div>
-            <div className='center max-width g-0'>
-                <input type='text' value={input} onChange={(e) => setInput(e.target.value)} placeholder={emailSent ? t('home.email.confirmation') : t('home.email.placeholder')} disabled={emailSent}/>
-                <button className={emailSent ? 'none' : 'visible'} onClick={insertEmail}>ok {heart}</button>
-            </div>
-        </div>    
+      
     </div>
 
   )

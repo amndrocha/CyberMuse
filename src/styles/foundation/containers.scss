@@ -2,6 +2,21 @@
     display: flex;
 }
 
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-reverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.flex-column-reverse {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
 .d-none {
     display: none;
 }
@@ -70,6 +85,14 @@
 
 .sticky-bottom {
     position: sticky !important;
+    bottom: 0;
+}
+
+.overlay {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
     bottom: 0;
 }
 
