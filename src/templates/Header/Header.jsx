@@ -8,6 +8,13 @@ export default function Header() {
     const dispatch = useDispatch();
     const { t, i18n } = useTranslation();
     const [language, setLanguage] = useState(i18n.resolvedLanguage);
+    let device = '';
+
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+        device = 'mobile';
+    }else{
+        device = 'not mobile';
+    }
 
     useEffect(() => {
         setLanguage(i18n.resolvedLanguage);
@@ -18,7 +25,8 @@ export default function Header() {
         <div className={theme} 
         style={{width: '100%', backgroundColor: 'var(--color-background)'}}
         >
-            <div className="header max-width d-flex justify-end g-1 py-1 px-3">
+            <div className="header max-width d-flex justify-end g-1 py-1 px-3 sticky-top">
+                <div>{device}</div>
                 <Link to="/">{t('header.home')}</Link>
                 <Link to="/about">{t('header.about')}</Link>
                 <div className="d-flex hug-width g-0">
@@ -30,7 +38,7 @@ export default function Header() {
                     className={language === 'en' ? '' : 'cursor-pointer disabled-text'}
                     >EN</div>
                 </div>
-                <div className="no-selection center"
+                <div className="no-selection center cursor-pointer"
                 style={{lineHeight: theme == 'dark-theme' ? '' : '10px', width: '1rem'}}
                 onClick={() => dispatch(switchTheme())}>
                     {theme === 'dark-theme' ? '☼' : '☾'}

@@ -63,8 +63,20 @@
     bottom: 0;
 }
 
+.sticky-top {
+    position: sticky !important;
+    top:0;
+}
+
+.sticky-bottom {
+    position: sticky !important;
+    bottom: 0;
+}
 
 //////////////
+.no-clip {
+    overflow: visible;
+}
 
 .clip {
     overflow: clip;
