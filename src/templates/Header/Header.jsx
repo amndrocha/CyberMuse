@@ -13,6 +13,7 @@ export default function Header() {
     const [language, setLanguage] = useState(i18n.resolvedLanguage);
     const [menu, setMenu] = useState(false);
     const { pathname } = location;
+    let home = pathname == '/' ? ' home' : '';
 
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
         dispatch(defineDevice());
@@ -37,7 +38,7 @@ export default function Header() {
     const theme = useSelector(state => state.shared.theme);
     const device = useSelector(state => state.shared.device);
     return (
-        <div className={theme+' '+device}>
+        <div className={theme+device+home}>
             <div className='overlay pointer-events-none d-flex justify-between p-3'>
                 <div className="d-flex flex-column justify-end">
                     <div className='d-flex g-1 hug-height pointer-events-auto'>
@@ -55,13 +56,14 @@ export default function Header() {
                         </div>
                     </div>                
                 </div>             
-                <div className="menu-btn hug-height click flex-column align-center justify-end" onClick={() => setMenu(!menu)}>
-                    <Barcode height={0.8} bars={25}/>
-                    <div className="bk-lightest text-darkest center" style={{height: '0.8rem'}}>MENU</div>
+                <div className="menu-btn hug-height click flex-column align-center justify-end" 
+                onClick={() => setMenu(!menu)}>
+                    <span className={home ? '' : 'd-none'}><Barcode height={0.8} bars={25}/></span>
+                    <div className="text-darkest center" style={{height: '0.8rem', backgroundColor: home ? 'var(--color-lightest)' : 'transparent'}}>MENU</div>
                 </div>
             </div>
 
-            <div className="overlay center flex-column bk-color" style={{display: menu ? 'flex' : 'none'}}>
+            <div className="overlay center flex-column bk-color" style={{display: menu ? 'flex' : 'none', zIndex: 2}}>
                 <div className="click" onClick={() => setMenu(!menu)}>{t('header.return')}</div>
                 <NavLink onClick={() => setMenu(!menu)} className={ ( {isActive} ) => isActive ? 'd-none' : ''} to="/">{t('header.home')}</NavLink>    
                 <NavLink onClick={() => setMenu(!menu)} className={ ( {isActive} ) => isActive ? 'd-none' : ''} to="/about">{t('header.about')}</NavLink>    

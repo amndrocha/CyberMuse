@@ -1,10 +1,17 @@
 .menu-btn {
     position: relative;
-    background-color:  var(--color-lightest);
     border-radius: 5px;
-    padding: 0.3rem;
-    border: 1px solid var(--color-darkest);
-    .dark-theme {
-        border: 1px solid var(--color-lightest);
+
+}    
+
+.home {
+    .menu-btn {
+        border: 1px solid var(--color-darkest) !important;
+        background-color:  var(--color-lightest);
+        padding: 0.3rem;
+        .dark-theme {
+            border: 1px solid var(--color-lightest);
+        }        
     }
+
 }

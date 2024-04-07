@@ -5,7 +5,7 @@ export const sharedSlice = createSlice({
   initialState: {
     value: 0,
     theme: window.matchMedia("(prefers-color-scheme: dark)") ? 'dark-theme' : 'light-theme',
-    device: 'desktop',
+    device: ' desktop',
   },
   reducers: {
     switchTheme: (state, action) => {
@@ -26,7 +26,7 @@ export const sharedSlice = createSlice({
       }
     },
     defineDevice: state => {
-      state.device = 'mobile';
+      state.device = ' mobile';
     },
   }
 })
