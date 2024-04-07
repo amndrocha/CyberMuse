@@ -39,8 +39,8 @@ export default function Header() {
     const device = useSelector(state => state.shared.device);
     return (
         <div className={theme+device+home}>
-            <div className='overlay pointer-events-none d-flex justify-between p-3'>
-                <div className="d-flex flex-column justify-end">
+            <div className='overlay pointer-events-none d-flex justify-between'>
+                <div className="flex-column justify-end p-3">
                     <div className='d-flex g-1 hug-height pointer-events-auto'>
                         <div className="d-flex hug-width g-0 click no-selection" onClick={switchLanguage}>
                             <div className={language === 'pt' ? '' : 'disabled-text'}
@@ -55,19 +55,35 @@ export default function Header() {
                             {theme === 'dark-theme' ? '☼' : '☾'}
                         </div>
                     </div>                
-                </div>             
-                <div className="menu-btn hug-height click flex-column align-center justify-end" 
-                onClick={() => setMenu(!menu)}>
-                    <span className={home ? '' : 'd-none'}><Barcode height={0.8} bars={25}/></span>
-                    <div className="text-darkest center" style={{height: '0.8rem', backgroundColor: home ? 'var(--color-lightest)' : 'transparent'}}>MENU</div>
+                </div>  
+                <div className="sidebar-wrapper absolute bottom-0 right-0 max-height">
+                    <div className="menu-tag">CYBERMUSE™ APRIL, 2024</div>
                 </div>
+                <div className="sidebar-wrapper absolute bottom-0 right-0 max-height bk-transparent">
+                    <div className="sidebar d-flex p-1 max-height g-2">
+                        <div className="menu-btn max-height click flex-column align-center justify-end"
+                        onClick={() => setMenu(!menu)}>
+                            <span className={home ? '' : 'd-none'}><Barcode height={0.5} bars={30}/></span>
+                            <div className={home ? "text-darkest center" : "center"} style={{height: '0.5rem', backgroundColor: home ? 'var(--color-lightest)' : 'transparent'}}>MENU</div>
+                        </div>                    
+                    </div>                
+                </div>
+        
+
             </div>
 
-            <div className="overlay center flex-column bk-color" style={{display: menu ? 'flex' : 'none', zIndex: 2}}>
-                <div className="click" onClick={() => setMenu(!menu)}>{t('header.return')}</div>
-                <NavLink onClick={() => setMenu(!menu)} className={ ( {isActive} ) => isActive ? 'd-none' : ''} to="/">{t('header.home')}</NavLink>    
-                <NavLink onClick={() => setMenu(!menu)} className={ ( {isActive} ) => isActive ? 'd-none' : ''} to="/about">{t('header.about')}</NavLink>    
+            <div className="overlay flex-column center bk-color" style={{display: menu ? 'flex' : 'none', zIndex: 2}}>
+                {/* <div className="click heading3" onClick={() => setMenu(!menu)}>{t('header.return')}</div>
+                <NavLink onClick={() => setMenu(!menu)} className={ ( {isActive} ) => isActive ? 'd-none' : 'heading3'} to="/">{t('header.home')}</NavLink>    
+                <NavLink onClick={() => setMenu(!menu)} className={ ( {isActive} ) => isActive ? 'd-none' : 'heading3'} to="/about">{t('header.about')}</NavLink>     */}
+                <div className='flex-column heading3' style={{width: '300px'}}>
+                    <div className="click heading3 ellipsis" onClick={() => setMenu(!menu)}>{t('header.return')}.......................................................................</div>
+                    <NavLink onClick={() => setMenu(!menu)} className={ ( {isActive} ) => isActive ? 'd-none' : 'ellipsis heading3'} to="/">{t('header.home')}.......................................................................</NavLink>
+                    <NavLink onClick={() => setMenu(!menu)} className={ ( {isActive} ) => isActive ? 'd-none' : 'ellipsis heading3'} to="/about">{t('header.about')}.......................................................................</NavLink>
+                </div>
             </div>        
+            
+            <div className="overlay blur-overlay pointer-events-none"></div>
         </div>        
     )
 }

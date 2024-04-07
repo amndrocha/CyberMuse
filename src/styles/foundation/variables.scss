@@ -10,13 +10,15 @@
     --padding-xs: 0.375rem;
     --padding-s: 0.625rem;
     //color
+    --color-primary: #020090;
+    --color-secondary: #e60079;
+    --color-terciary: #e4a348;
+    --color-quartenery: #b9beb0;
+    --color-quintenery: #A0B10B;
     --color-darkest: #1E0147;
     --color-main-contrast: var(--color-darkest);
     --color-lightest: #f3f3f3;
     --color-text-disabled: grey;
-    --color-primary: #020090;
-    --color-secondary: #e60079;
-    --color-terciary: #e4a348;
     --logo-height: 255px; 
 
     --color-logo: var(--color-primary);
@@ -25,7 +27,8 @@
 .light-theme {
     @extend #root;
     --color-contrast: var(--color-darkest);
-    --color-background: #b9beb0;
+    --color-background: var(--color-quartenery);
+    --color-background-contrast: var(--color-darkest);
     --color-text-main: var(--color-darkest);
     .light-hide {
         display: none;
@@ -35,8 +38,11 @@
 .dark-theme {
     @extend #root;
     --color-background: var(--color-darkest);
+    --color-background-contrast: var(--color-quartenery);
     --color-contrast: var(--color-lightest);
     --color-text-main: var(--color-lightest);
+    --color-primary: var(--color-terciary);
+    --color-text-heading-1: var(--color-terciary);
     .dark-hide {
         display: none;
     } 
@@ -48,7 +54,8 @@
     } 
 }
 
-.desktop {
+.desktop {    
+    --sidebar: 110px;
     .desktop-hide {
         display: none;
     } 

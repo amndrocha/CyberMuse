@@ -34,11 +34,14 @@ function Home() {
   const emailBtn = (dummy) => {
     if (dummy) {
       return (
-        <button className='opacity-0'>ok!</button>
+        <button onClick={() => setEmailSent(true)} className='glare-dummy'>
+        <span className={emailSent ? 'dissappear slow opacity-0' : ''}>ok</span>
+          <span className={emailSent ? 'appear fit' : 'd-none'}>{t('home.email.confirmation')}</span>
+        </button>
       )
     } else {
       return (
-        <button>ok!</button>
+        <button><span className='opacity-0'>{emailSent ? t('home.email.confirmation') : 'ok'}</span></button>
       )      
     }
 
@@ -46,7 +49,7 @@ function Home() {
   const emailInput = (dummy) => {
     if (dummy) {
       return (
-        <input placeholder='Insert email to begin' type='text' className='glare-dummy'/>
+        <input placeholder={t('home.email.placeholder')} type='text' className='glare-dummy'/>
       )
     } else {
       return (
@@ -58,19 +61,32 @@ function Home() {
   const theme = useSelector(state => state.shared.theme);
   const isDark = theme === 'dark-theme';
   return (
-    <div className={theme+' page'}>
+    <div className={theme+' page p-3 homepage justify-between'}>
+      <div className='d-flex max-width'>
+        <div>
+          <div className='d-flex heading3' style={{width: '100%'}}>
+            <div className='ellipsis heading3' style={{whiteSpace: 'nowrap'}}>
+              *✧•｡˖.......................................................................
+            </div>
+          </div>
 
-      <div className='flex-column g-0' style={{width: '300px'}}>
-        Loading *✧•｡˖
-        <div className='center' style={{height: '1.9rem'}}>
-          <div className='heading2'>manifest who you are</div>          
+          <div className='flex-column g-0 section-width'>
+            <div className='break'></div>
+            <Logo size='10rem'/>
+            <div className='center break'>
+              <div className='heading2'>{t('home.slogan')}</div>          
+            </div>
+            <div className='body'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente beatae voluptates accusantium perferendis, vitae cumque earum! Asperiores doloribus voluptatem officiis. Cupiditate exercitationem qui aut, labore laborum culpa ratione repellat reiciendis!</div>         
+          </div>          
         </div>
 
-        <div className='body'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente beatae voluptates accusantium perferendis, vitae cumque earum! Asperiores doloribus voluptatem officiis. Cupiditate exercitationem qui aut, labore laborum culpa ratione repellat reiciendis!</div>         
       </div>
-      <div className='absolute d-flex g-0 bottom-0 right-0 p-3'>
-        <Glare radius='20px' element={() => emailInput(false)} dummy={() => emailInput(true)}/>
-        <Glare radius='20px' element={() => emailBtn(false)} dummy={() => emailBtn(true)}/>
+
+      <div className='max-width d-flex justify-end'>
+        <div className='d-flex justify-end fit bottom-0 right-0 g-0'>
+          <span className={emailSent ? 'dissappear' : ''}><Glare radius='20px' element={() => emailInput(false)} dummy={() => emailInput(true)}/></span>
+          <Glare radius='20px' element={() => emailBtn(false)} dummy={() => emailBtn(true)}/>
+        </div>        
       </div>
     </div>
 

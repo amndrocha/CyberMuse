@@ -1,10 +1,67 @@
+@keyframes shift {
+    0%   { 
+        --light-angle: 70%;
+    }
+    12%   { 
+        --light-angle: 65%;
+    }
+    25%   { 
+        --light-angle: 60%;
+    }
+    37%   { 
+        --light-angle: 55%;
+    }
+    49%   { 
+        --light-angle: 50%;
+    }
+    61%   { 
+        --light-angle: 45%;
+    }
+    73%   { 
+        --light-angle: 40%;
+    }
+    85%   { 
+        --light-angle: 35%;
+    }
+    100% { 
+        --light-angle: 30%;
+    }
+}
+
+.shift {
+    animation-name: shift;
+    animation-timing-function: linear;
+    animation-duration: 0.1s;
+    animation-fill-mode: forwards;
+}
+
 .glare {
+    --light-angle: 70%;
     position: absolute;
     top: 0;
     width: fit-content;
     height: fit-content;
-    background: linear-gradient(300deg, rgba(255,255,255,0) 0%, rgba(255, 255, 255, 0.766) 69%, rgba(255,255,255,0) 100%);
-    box-shadow: 21px 21px 21px -12px rgba(0,0,0,0.2);
+    background: linear-gradient(300deg, rgba(255,255,255,0) 10%, rgba(255, 255, 255, 0.3) var(--light-angle), rgba(255,255,255,0) 95%);
+    border-radius: var(--radius);
+    color: transparent;
+}
+
+.glare:active {
+    background: linear-gradient(300deg, rgba(255,255,255,0) 10%, rgba(255, 255, 255, 0.4) var(--light-angle), rgba(255,255,255,0) 90%);
+}
+
+.glare:hover {
+    @extend .shift;
+}
+
+
+
+.glare-shadow {    
+    box-shadow: 3px 3px 5px 0 rgb(0, 0, 0);
     border-radius: var(--radius);
 }
+
+// .glare-shadow:active {
+//     box-shadow: none;
+// }
 

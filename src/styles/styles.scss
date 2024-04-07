@@ -10,10 +10,9 @@
     padding: 0;
     gap: 0;
     box-sizing: border-box;
-    font-family: Calibri, 'Trebuchet MS', sans-serif;
-    color: var(--color-text-main);
     position: static;
     max-width: 100%;
+    font-size: 24px;
 }
 
 html {
@@ -36,6 +35,8 @@ body {
 }
 
 input {
+    min-width: fit-content;
+    width: 13rem;
     border: none;
     border-radius: 20px;
     border: 3px solid var(--color-lightest);
@@ -56,6 +57,10 @@ input:focus {
 }
 
 button {
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: fit-content;
     height: 1.5rem;
     background: none;
@@ -64,7 +69,7 @@ button {
     border-radius: 20px;
     background-color: var(--color-secondary);
     padding: 0 var(--padding-s) !important;
-    color: var(--color-main-contrast) !important;
+    color: var(--color-lightest) !important;
     border: 3px solid var(--color-lightest);
     @media only screen and (max-width: 365px){
         border: 2px solid var(--color-lightest);
@@ -93,7 +98,6 @@ button:active {
     align-items: center;
     justify-content: center;
     background-color: var(--color-background);
-    padding: 0 var(--page-padding-l); 
     @media only screen and (max-width: 800px){
         padding: 0 var(--page-padding-m); 
     }
@@ -108,17 +112,3 @@ button:active {
     max-width: 100%;
 }
 
-.highlight {
-    border: 2px solid red;
-    background-color: rgba(255, 0, 0, 0.162);
-}
-
-.bk-color {
-    background-color: var(--color-background);
-}
-.bk-darkest {
-    background-color: var(--color-darkest);
-}
-.bk-lightest {
-    background-color: var(--color-lightest);
-}

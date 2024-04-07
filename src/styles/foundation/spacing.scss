@@ -93,6 +93,12 @@
 
 .p-3 {
     padding: 3rem;
+    @media only screen and (max-width: 667px){
+        padding: 2rem;
+    }
+    @media only screen and (max-width: 365px){
+        padding: 0.5rem;
+    }
 }
 
 .px-3 {

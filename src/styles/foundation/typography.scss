@@ -8,10 +8,24 @@
     src: url('assets/BantengStory.otf');
 }
 
+@font-face {
+    font-family: 'Body';
+    src: url('assets/BantengStory.otf');
+}
+
+* {    
+    font-family: Calibri, 'Trebuchet MS', sans-serif;
+}
+
 #root {
     a {
+        color: var(--color-text-main);
         text-decoration: none;
         cursor: pointer;
+    }
+
+    div {
+        color: var(--color-text-main);
     }
 
     .disabled-text {
@@ -31,9 +45,9 @@
     }
 
     .ellipsis {
-        width: 100%;
         max-width: 100%;
-        overflow: clip;
+        overflow: hidden;
+        white-space: nowrap;
         text-overflow: ellipsis;
     }
 
@@ -63,8 +77,11 @@
         font-size: calc(var(--size) - ((var(--size) * 82) / 100));
     }
 
+    .heading3 {
+        font-size: 1.5rem;
+    }
+
     .body {
-        font-family: 'Body';
         text-align: justify;
     }
 
@@ -75,6 +92,14 @@
         }        
     }
 
-
+    ::-moz-selection { /* Code for Firefox */
+        color: var(--color-background);
+        background: var(--color-background-contrast);
+    }
+    
+    ::selection {
+        color: var(--color-background);
+        background: var(--color-background-contrast);
+    }
 
 }
