@@ -3,6 +3,9 @@ import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { defineDevice, switchTheme } from "../../features/sharedSlice";
+import { Barcode } from "../../components/Barcode/Barcode";
+import './Header.scss'
+import { Glare } from "../../components/Glare/Glare";
 
 export default function Header() {
     const dispatch = useDispatch();
@@ -52,11 +55,14 @@ export default function Header() {
                         </div>
                     </div>                
                 </div>             
-                <div className="hug-height click" onClick={() => setMenu(!menu)}>MENU</div>
+                <div className="menu-btn hug-height click flex-column align-center justify-end" onClick={() => setMenu(!menu)}>
+                    <Barcode height={0.8} bars={25}/>
+                    <div className="bk-lightest text-darkest center" style={{height: '0.8rem'}}>MENU</div>
+                </div>
             </div>
 
             <div className="overlay center flex-column bk-color" style={{display: menu ? 'flex' : 'none'}}>
-                <div className="click" onClick={() => setMenu(!menu)}>Voltar</div>
+                <div className="click" onClick={() => setMenu(!menu)}>{t('header.return')}</div>
                 <NavLink onClick={() => setMenu(!menu)} className={ ( {isActive} ) => isActive ? 'd-none' : ''} to="/">{t('header.home')}</NavLink>    
                 <NavLink onClick={() => setMenu(!menu)} className={ ( {isActive} ) => isActive ? 'd-none' : ''} to="/about">{t('header.about')}</NavLink>    
             </div>        

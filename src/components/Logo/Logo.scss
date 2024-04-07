@@ -1,0 +1,63 @@
+.logo-wrapper {
+    width: calc(var(--size) + ((var(--size) * 81.3) / 100));
+    height: calc(var(--size) - ((var(--size) * 11) / 100));
+}
+
+.logo {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    transform: scale(0.6, 0.7);
+    height: calc(var(--size) + ((var(--size) * 27) / 100));
+    overflow: clip;
+    color: var(--color-logo);
+    text-overflow: clip;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-left: -6.2rem;
+    margin-top: -1.9rem;
+}
+
+.cyber-l {
+    text-overflow: clip;
+    overflow: hidden;
+    white-space: nowrap;
+    color: var(--color-logo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Logo';
+    font-size: var(--size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(var(--size) - ((var(--size) * 28.9) / 100));
+    overflow: clip;
+    padding-bottom: calc(var(--size) - ((var(--size) * 90) / 100));
+}
+
+.cyber-sm {
+    @extend .cyber-l;
+    height: calc(var(--size) - ((var(--size) * 5) / 100));
+    transform: scale(1, 0.6);
+    margin-top: calc(var(--size) - ((var(--size) * 123) / 100));;
+}
+
+.muse-l {
+    @extend .cyber-l;
+    font-size: calc(var(--size) + ((var(--size) * 21.2) / 100));  
+    margin-top: calc(var(--size) - ((var(--size) * 123) / 100));;
+    height: calc(var(--size) - ((var(--size) * 5) / 100));
+
+}
+
+.muse-sm {
+    @extend .cyber-l;
+    --calc-helper: calc((var(--size) * 20));
+    position: absolute;
+    height: var(--size);
+    transform: scale(1, 0.6);
+    font-size: calc(var(--size) + ((var(--size) * 20.9) / 100));
+    margin-top: calc(var(--size) - ((var(--size) * 50) / 100));
+    padding-bottom: calc(var(--size) - ((var(--size) * 90) / 100));
+}

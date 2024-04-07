@@ -1,0 +1,19 @@
+.bk-none {
+    background-color: transparent !important;
+    background: none !important;
+}
+
+.opacity-0 {
+    opacity: 0;
+}
+
+.invert {
+    filter: invert(1);
+}
+
+.glare-dummy {
+    background-color: transparent !important;
+    background: none !important;
+    border: none !important;
+    border: 3px solid transparent;
+}

@@ -68,6 +68,10 @@
     position: absolute !important;
 }
 
+.relative {
+    position: relative !important;
+}
+
 .fixed-top {
     position: fixed !important;
     top:0;
@@ -107,4 +111,9 @@
 
 .clipy {
     overflow-y: clip;
+}
+
+.fit {
+    width: fit-content;
+    height: fit-content;
 }

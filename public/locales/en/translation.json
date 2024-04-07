@@ -13,7 +13,8 @@
     },
     "header": {
         "home": "Home",
-        "about": "About us"
+        "about": "About us",
+        "return": "Return"
     },
     "error": {
         "notFound": "Page not found :("

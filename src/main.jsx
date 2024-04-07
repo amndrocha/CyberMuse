@@ -7,6 +7,7 @@ import { Provider} from 'react-redux';
 import './i18n';
 import './styles/styles.scss';
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <Provider store={store}>

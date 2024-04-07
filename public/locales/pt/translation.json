@@ -13,7 +13,8 @@
     },
     "header": {
         "home": "Início",
-        "about": "Quem somos"
+        "about": "Quem somos",
+        "return": "Voltar"
     },
     "error": {
         "notFound": "Página não encontrada :("

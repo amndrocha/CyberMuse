@@ -6,7 +6,7 @@ export const homeSlice = createSlice({
     sentEmail: false,
   },
   reducers: {
-    sendEmail: (state, action) => {
+    sendEmail: state => {
       state.sentEmail = true;
     },
   }

@@ -1,8 +1,80 @@
-a {
-    text-decoration: none;
-    cursor: pointer;
+@font-face {
+    font-family: 'Logo';
+    src: url('assets/Barlow-Black.ttf');
 }
 
-.disabled-text {
-    color: var(--color-text-disabled);
+@font-face {
+    font-family: 'Heading2';
+    src: url('assets/BantengStory.otf');
+}
+
+#root {
+    a {
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .disabled-text {
+        color: var(--color-text-disabled);
+    }
+
+    .text-darkest {
+        color: var(--color-darkest);
+    }
+
+    .text-lightest {
+        color: var(--color-lightest);
+    }
+
+    .text-lightest {
+        color: var(--color-lightest);
+    }
+
+    .ellipsis {
+        width: 100%;
+        max-width: 100%;
+        overflow: clip;
+        text-overflow: ellipsis;
+    }
+
+    .text-justify {
+        text-align: justify;
+    }
+    .text-center {
+        text-align: center;
+    }
+    .text-left {
+        text-align: left;
+    }
+    .text-right {
+        text-align: right;
+    }
+
+    .home-logo-size {
+        --size: 10rem;
+    }
+
+    .heading2 {
+        position: absolute;
+        --size: 17rem;
+        font-family: 'Heading2';
+        transform: scale(1, 1);
+        color: var(--color-secondary);
+        font-size: calc(var(--size) - ((var(--size) * 82) / 100));
+    }
+
+    .body {
+        font-family: 'Body';
+        text-align: justify;
+    }
+
+    * {
+        font-size: 0.8rem;
+        @media only screen and (max-width: 365px){
+            font-size: 0.6rem;
+        }        
+    }
+
+
+
 }

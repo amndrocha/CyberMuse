@@ -3,7 +3,7 @@
 @use 'foundation/containers.scss';
 @use 'foundation/interaction.scss';
 @use 'foundation/typography.scss';
-@use 'foundation/filters.scss';
+@use 'foundation/effects.scss';
 
 * {
     margin: 0;
@@ -13,6 +13,7 @@
     font-family: Calibri, 'Trebuchet MS', sans-serif;
     color: var(--color-text-main);
     position: static;
+    max-width: 100%;
 }
 
 html {
@@ -35,30 +36,49 @@ body {
 }
 
 input {
-    background-color: #fff;
     border: none;
     border-radius: 20px;
-    border: 1px solid var(--color-contrast);
-    padding: var(--padding-xs) var(--padding-s) !important;
+    border: 3px solid var(--color-lightest);
+    background-color: rgb(255, 255, 255);
+    padding: 0 var(--padding-s) !important;
+    color: var(--color-main-contrast) !important;
+    height: 1.5rem;
+    @media only screen and (max-width: 365px){
+        border: 2px solid var(--color-lightest);
+        padding: 0 var(--padding-xs) !important;
+        height: 1.2rem;
+    }
+}
+
+input:focus {
+    border: none !important;
+    outline: none !important;
 }
 
 button {
+    width: fit-content;
+    height: 1.5rem;
+    background: none;
+    border: none;
     white-space: nowrap;
     border-radius: 20px;
-    border: 2px solid var(--color-main);
-    background-color: var(--color-main);
+    background-color: var(--color-secondary);
+    padding: 0 var(--padding-s) !important;
     color: var(--color-main-contrast) !important;
-    padding: var(--padding-xs) var(--padding-s) !important;
-    border: 1px solid var(--color-contrast);
-    cursor: pointer;
+    border: 3px solid var(--color-lightest);
+    @media only screen and (max-width: 365px){
+        border: 2px solid var(--color-lightest);
+        padding: 0 var(--padding-xs) !important;
+        height: 1.2rem;
+    }
 }
 
 button:hover {
-    background-color: var(--color-main-lighter);
+    cursor: pointer;
 }
 
 button:active {
-    background-color: var(--color-main-darker);
+    cursor: pointer;
 }
 
 .none {
@@ -95,4 +115,10 @@ button:active {
 
 .bk-color {
     background-color: var(--color-background);
+}
+.bk-darkest {
+    background-color: var(--color-darkest);
+}
+.bk-lightest {
+    background-color: var(--color-lightest);
 }

@@ -1,0 +1,8 @@
+.section-width {
+    width: 100%;
+    max-width: calc(var(--size) + ((var(--size) * 81.3) / 100));
+    @media only screen and (max-width: 310px){
+        transform: scale(0.6,1);
+    }
+} 
+
