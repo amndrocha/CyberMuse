@@ -28,7 +28,7 @@
 }
 
 .sidebar-tag {
-    width: calc(1rem + (var(--px-page) * 2));
+    width: 1rem;
 }
 
 .menu-tag {
@@ -56,9 +56,10 @@
 .blur-overlay {
     z-index: 999;
     position: fixed;
+    left: 0;
     overflow: visible;
-    height: 500%;
-    width: 500%;
+    height: 100vh;
+    width:100vw;
     background: radial-gradient(circle, var(--color-terciary) -20%, rgba(0,0,0,0) 70%);
     mix-blend-mode: hard-light;
 }
@@ -66,7 +67,20 @@
 
 .light-theme {
     .blur-overlay {
-        mix-blend-mode: color-burn;
-        background: radial-gradient(circle, var(--color-terciary) 0%, rgba(0,0,0,0) 100%);
+        //mix-blend-mode:multiply;
+        background: radial-gradient(circle, var(--color-terciary) 30%, rgba(0,0,0,0) 100%);
     }
 }
+
+.fake-background {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-background);
+    z-index: -1;
+    pointer-events: none;
+}
+

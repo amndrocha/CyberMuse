@@ -1,11 +1,9 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { defineDevice, switchTheme } from "../../features/sharedSlice";
-import { Barcode } from "../../components/Barcode/Barcode";
-import './Header.scss'
-import { Glare } from "../../components/Glare/Glare";
+import { defineDevice, defineLanguage, switchTheme } from "../../features/sharedSlice";
+import './Header.scss';
 import { Sparkles } from "../../components/Sparkles/Sparkles";
 
 export default function Header() {
@@ -19,14 +17,17 @@ export default function Header() {
     if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
         dispatch(defineDevice());
     }
+    dispatch(defineLanguage(language));
 
     const handleMenu = () => {
         setMenu(!menu);
     }
 
     useEffect(() => {
-        setLanguage(i18n.resolvedLanguage);
-    }, [i18n.resolvedLanguage]);
+        let language = i18n.resolvedLanguage;
+        setLanguage(language);
+        dispatch(defineLanguage(language));
+    }, [i18n.resolvedLanguage, dispatch]);
 
     const switchLanguage = () => {
         if (language === 'pt') {
@@ -78,39 +79,42 @@ export default function Header() {
     const theme = useSelector(state => state.shared.theme);
     const device = useSelector(state => state.shared.device);
     return (
-        <div className={theme+device+home+' page overlay bk-none pointer-events-none'}>
-            <div className="page-content justify-end">
-                <Sparkles element1={controls} element2={menuMobile}/>
-              
-            </div>
+        <div className={theme+device+home+' background pointer-events-none'}>
+            <div className='page bk-none pointer-events-none justify-end'>
+                <div className="page-content justify-end">
+                    <Sparkles element1={controls} element2={menuMobile}/>
+                
+                </div>
 
-            <div className="sidebar-wrapper sidebar-tag center absolute bottom-0 right-0 max-height mobile-hide">
-                <div className="menu-tag">CYBERMUSE™ APRIL, 2024</div>
-            </div>     
-            <div className="sidebar-wrapper sidebar-menu max-height flex-column absolute right-0 mobile-hide">
-                <div className="menu-btn-wrapper">
-                    <div className="menu-btn click"
-                        onClick={() => setMenu(!menu)}>
-                            <div className="barcode"></div>
-                            <div>MENU</div>
-                    </div>                        
+                <div className="mobile-hide sidebar-wrapper sidebar-tag max-height center">
+                    <div className="menu-tag">CYBERMUSE™ APRIL, 2024</div>
+                </div>     
+                <div className="mobile-hide sidebar-wrapper sidebar-menu max-height flex-column absolute align-end">
+                    <div className="menu-btn-wrapper">
+                        <div className="menu-btn click"
+                            onClick={() => setMenu(!menu)}>
+                                <div className="barcode"></div>
+                                <div>MENU</div>
+                        </div>                        
+                    </div>
+                </div>                   
+                <div className='pointer-events-none d-flex justify-between'>
+                    <div className="flex-column justify-end m-page">
+                    </div>
                 </div>
-            </div>                   
-            <div className='overlay pointer-events-none d-flex justify-between'>
-                <div className="flex-column justify-end m-page">
-                                    
-                </div>
-            </div>
 
-            <div className="overlay flex-column center bk-color" style={{display: menu ? 'flex' : 'none', zIndex: 999}}>
-                <div className='flex-column heading3' style={{width: '300px'}}>
-                    <div className="click heading3 ellipsis" onClick={() => setMenu(!menu)}>{t('header.return')}.......................................................................</div>
-                    <NavLink onClick={() => setMenu(!menu)} className={ ( {isActive} ) => isActive ? 'd-none' : 'click ellipsis heading3'} to="/">{t('header.home')}.......................................................................</NavLink>
-                    <NavLink onClick={() => setMenu(!menu)} className={ ( {isActive} ) => isActive ? 'd-none' : 'click ellipsis heading3'} to="/about">{t('header.about')}.......................................................................</NavLink>
-                </div>
-            </div>         
+                <div className="overlay flex-column center bk-color" style={{display: menu ? 'flex' : 'none', zIndex: 999}}>
+                    <div className='flex-column heading3' style={{width: '300px'}}>
+                        <div className="click heading3 ellipsis" onClick={() => setMenu(!menu)}>{t('header.return')}.......................................................................</div>
+                        <NavLink onClick={() => setMenu(!menu)} className={ ( {isActive} ) => isActive ? 'd-none' : 'click ellipsis heading3'} to="/">{t('header.home')}.......................................................................</NavLink>
+                        <NavLink onClick={() => setMenu(!menu)} className={ ( {isActive} ) => isActive ? 'd-none' : 'click ellipsis heading3'} to="/about">{t('header.about')}.......................................................................</NavLink>
+                    </div>
+                </div>         
+            </div>
+            <div className="fake-background"></div> 
             
-            <div className="overlay blur-overlay pointer-events-none"></div>
-        </div>        
+            <div className="overlay blur-overlay pointer-events-none"></div>            
+        </div>
+      
     )
 }

@@ -7,20 +7,27 @@
     }
 }
 
-.logo-box {    
-    width: calc(var(--size) + ((var(--size) * 81.3) / 100)) !important;
-    height: calc(var(--size) - ((var(--size) * 11) / 100)) !important;
-}
-
-.break {
-    max-width: calc(var(--size) + ((var(--size) * 81.3) / 100));
-    height: 1.9rem;
-
-}
-
 .homepage {
     justify-content: space-between !important;
     @media screen and (orientation:landscape) {
         display: flex;
     }
+}
+
+.slogan-wrapper {
+    display: flex;
+    align-items: center;
+    position: relative; 
+    justify-content: center;
+    width: 100%;
+}
+
+.slogan {
+    position: absolute;
+    margin-top: 5%;
+}
+
+.slogan-dummy {
+   width: 30%;
+   opacity: 0;
 }

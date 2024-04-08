@@ -41,6 +41,23 @@
     align-items: center !important;
 }
 
+.align-left {
+    align-items: left !important;
+}
+
+.align-right {
+    align-items: right !important;
+}
+
+.align-start {
+    align-items: flex-end !important;
+}
+
+
+.align-end {
+    align-items: flex-end !important;
+}
+
 .center {
     display: flex;
     align-items: center;
@@ -115,7 +132,9 @@
 
 .fit {
     width: fit-content;
+    min-width: fit-content;
     height: fit-content;
+    min-height: fit-content;
 }
 
 .p-page {

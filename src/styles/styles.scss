@@ -1,9 +1,10 @@
-@use 'foundation/variables.scss';
+@use 'variables.scss';
 @use 'foundation/spacing.scss';
 @use 'foundation/containers.scss';
 @use 'foundation/interaction.scss';
 @use 'foundation/typography.scss';
 @use 'foundation/effects.scss';
+@use 'components/Glare.scss';
 
 * {
     margin: 0;
@@ -35,7 +36,6 @@ body {
 }
 
 input {
-    min-width: fit-content;
     max-width: 100%;
     width: 13rem;
     border: none;
@@ -45,6 +45,9 @@ input {
     padding: 0 var(--padding-s) !important;
     color: var(--color-main-contrast) !important;
     height: 1.5rem;
+    @media only screen and (max-width: 430px){
+        width: 100%;
+    }
     @media only screen and (max-width: 365px){
         border: 2px solid var(--color-lightest);
         padding: 0 var(--padding-xs) !important;
@@ -92,9 +95,19 @@ button:active {
     display: none;
 }
 
+.background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: clip;
+}
+
 .page {
     display: flex;
-    width: 100%;
+    width: var(--page-width);
     max-width: 100%;
     height: 100%;
     gap: 0.5rem;
@@ -105,20 +118,16 @@ button:active {
     padding-right: var(--px-page);
 }
 
+
 .page-content {
     padding-top: 2rem;
     position: relative;
     height: 100%;
     width: 100%;
+    max-width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-}
-
-.mobile {
-    .sidebar-dummy {
-        display: none;
-    }
 }
 
 .sidebar-dummy {
@@ -127,5 +136,10 @@ button:active {
     @media screen and (orientation: portrait) {
         display: none;
     }
+}
+
+.gap {
+    width: 1px;
+    height: 0.5rem;
 }
 

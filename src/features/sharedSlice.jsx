@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 export const sharedSlice = createSlice({
   name: 'shared',
   initialState: {
-    value: 0,
+    language: 'en',
     theme: window.matchMedia("(prefers-color-scheme: dark)") ? 'dark-theme' : 'light-theme',
     device: ' desktop',
   },
@@ -28,9 +28,12 @@ export const sharedSlice = createSlice({
     defineDevice: state => {
       state.device = ' mobile';
     },
+    defineLanguage: (state, action) => {
+      state.language = action.payload;
+    }
   }
 })
 
-export const { switchTheme, defineDevice } = sharedSlice.actions
+export const { switchTheme, defineDevice, defineLanguage } = sharedSlice.actions
 
 export default sharedSlice.reducer

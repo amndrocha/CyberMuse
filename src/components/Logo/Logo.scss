@@ -1,63 +1,16 @@
-.logo-wrapper {
-    width: calc(var(--size) + ((var(--size) * 81.3) / 100)) !important;
-    height: calc(var(--size) - ((var(--size) * 11) / 100)) !important;
-}
-
-.logo {
-    position: absolute !important;
-    display: flex !important;
-    flex-direction: column !important;
-    transform: scale(0.6, 0.7) !important;
-    height: calc(var(--size) + ((var(--size) * 27) / 100)) !important;
-    overflow: clip !important;
-    color: var(--color-text-heading-1) !important;
-    text-overflow: clip !important;
-    overflow: hidden !important;
-    white-space: nowrap !important;
-    margin-left: -6.2rem !important;
-    margin-top: -1.9rem !important;
-}
-
-.cyber-l {
-    text-overflow: clip !important;
-    overflow: hidden !important;
-    white-space: nowrap !important;
-    color: var(--color-text-heading-1) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-family: 'Logo' !important;
-    font-size: var(--size) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    height: calc(var(--size) - ((var(--size) * 28.9) / 100)) !important;
-    overflow: clip !important;
-    padding-bottom: calc(var(--size) - ((var(--size) * 90) / 100)) !important;
-}
-
-.cyber-sm {
-    @extend .cyber-l;
-    height: calc(var(--size) - ((var(--size) * 5) / 100)) !important;
-    transform: scale(1, 0.6) !important;
-    margin-top: calc(var(--size) - ((var(--size) * 123) / 100)) !important;
-}
-
-.muse-l {
-    @extend .cyber-l;
-    font-size: calc(var(--size) + ((var(--size) * 21.2) / 100)) !important;  
-    margin-top: calc(var(--size) - ((var(--size) * 123) / 100)) !important;
-    height: calc(var(--size) - ((var(--size) * 5) / 100)) !important;
+.logo-text {
+    width: 100%;
+    background: var(--color-primary);
+    mask-repeat: no-repeat;
 
 }
 
-.muse-sm {
-    @extend .cyber-l;
-    --calc-helper: calc((var(--size) * 20)) !important;
-    position: absolute !important;
-    height: var(--size) !important;
-    transform: scale(1, 0.6) !important;
-    font-size: calc(var(--size) + ((var(--size) * 20.9) / 100)) !important;
-    margin-top: calc(var(--size) - ((var(--size) * 50) / 100)) !important;
-    padding-bottom: calc(var(--size) - ((var(--size) * 90) / 100)) !important;
+.cyber {
+    -webkit-mask-image: url('./assets/cyber.svg');
+    mask-image: url('./assets/cyber.svg');
+}
+
+.muse {
+    -webkit-mask-image: url('./assets/muse.svg');
+    mask-image: url('./assets/muse.svg');
 }
