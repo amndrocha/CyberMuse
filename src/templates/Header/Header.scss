@@ -67,7 +67,7 @@
 
 .light-theme {
     .blur-overlay {
-        //mix-blend-mode:multiply;
+        mix-blend-mode: hard-light;
         background: radial-gradient(circle, var(--color-terciary) 30%, rgba(0,0,0,0) 100%);
     }
 }
