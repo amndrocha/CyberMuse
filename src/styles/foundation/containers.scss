@@ -97,7 +97,7 @@
     height: 100vh;
     width: 100vw;
     top: 0;
-    bottom: 0;
+    left: 0;
 }
 
 //////////////
@@ -116,4 +116,21 @@
 .fit {
     width: fit-content;
     height: fit-content;
+}
+
+.p-page {
+    padding-left: var(--px-page);
+    padding-right: var(--px-page);
+    padding-top: var(--py-page);
+    padding-bottom: var(--py-page);
+}
+
+.px-page {
+    padding-left: var(--px-page);
+    padding-right: var(--px-page);
+}
+
+.py-page {
+    padding-top: var(--py-page);
+    padding-bottom: var(--py-page);
 }

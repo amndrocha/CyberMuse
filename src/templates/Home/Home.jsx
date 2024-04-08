@@ -6,6 +6,7 @@ import { Logo } from '../../components/Logo/Logo';
 
 import './Home.scss'
 import { Glare } from '../../components/Glare/Glare';
+import { Sparkles } from '../../components/Sparkles/Sparkles';
 
 function Home() {
   const { t } = useTranslation();
@@ -57,37 +58,37 @@ function Home() {
       )      
     }
   } 
+  const cybermuse = `CYBER
+      MUSE
+   `;
 
   const theme = useSelector(state => state.shared.theme);
   const isDark = theme === 'dark-theme';
   return (
-    <div className={theme+' page p-3 homepage justify-between'}>
-      <div className='d-flex max-width'>
-        <div>
-          <div className='d-flex heading3' style={{width: '100%'}}>
-            <div className='ellipsis heading3' style={{whiteSpace: 'nowrap'}}>
-              *✧•｡˖.......................................................................
-            </div>
-          </div>
-
+    <div className={theme+' page'}>
+      <div className='page-content'>
+        <div className='flex-column justify-between max-height'>
           <div className='flex-column g-0 section-width'>
-            <div className='break'></div>
-            <Logo size='10rem'/>
-            <div className='center break'>
-              <div className='heading2'>{t('home.slogan')}</div>          
-            </div>
-            <div className='body'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente beatae voluptates accusantium perferendis, vitae cumque earum! Asperiores doloribus voluptatem officiis. Cupiditate exercitationem qui aut, labore laborum culpa ratione repellat reiciendis!</div>         
-          </div>          
+            <span className='flex-column heading1 highlight opacity-0'>
+              <span className='heading-line1'>CYBER</span>
+              <span className='heading-line1'>MUSE</span>
+            </span>
+
+            <div className='heading2'>{t('home.slogan')}</div>
+            <div className='body'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente beatae voluptates accusantium perferendis, vitae cumque earum! Asperiores doloribus voluptatem officiis. Cupiditate exercitationem qui aut, labore laborum culpa ratione repellat reiciendis!</div>  
+          </div>    
+          <div className='max-width d-flex center'>
+            <div className='d-flex fit bottom-0 right-0 g-0'>
+              <span className={emailSent ? 'dissappear' : ''}><Glare radius='20px' element={() => emailInput(false)} dummy={() => emailInput(true)}/></span>
+              <Glare radius='20px' element={() => emailBtn(false)} dummy={() => emailBtn(true)}/>
+            </div>        
+          </div>                
         </div>
-
+          
       </div>
 
-      <div className='max-width d-flex justify-end'>
-        <div className='d-flex justify-end fit bottom-0 right-0 g-0'>
-          <span className={emailSent ? 'dissappear' : ''}><Glare radius='20px' element={() => emailInput(false)} dummy={() => emailInput(true)}/></span>
-          <Glare radius='20px' element={() => emailBtn(false)} dummy={() => emailBtn(true)}/>
-        </div>        
-      </div>
+
+      <div className='sidebar-dummy'></div>
     </div>
 
   )

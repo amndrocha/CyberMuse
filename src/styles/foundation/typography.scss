@@ -46,8 +46,8 @@
 
     .ellipsis {
         max-width: 100%;
-        overflow: hidden;
         white-space: nowrap;
+        overflow: clip;
         text-overflow: ellipsis;
     }
 
@@ -68,17 +68,35 @@
         --size: 10rem;
     }
 
+    .heading1 {
+        height: fit-content;
+        width: fit-content;
+        white-space: pre-line;
+    }
+
     .heading2 {
-        position: absolute;
-        --size: 17rem;
+        height: 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        white-space: nowrap;
+        font-size: 3rem;
         font-family: 'Heading2';
         transform: scale(1, 1);
         color: var(--color-secondary);
-        font-size: calc(var(--size) - ((var(--size) * 82) / 100));
+        
+        @media only screen and (max-width: 485px){
+            font-size: calc(5vw + 5vh);
+        }
     }
 
     .heading3 {
-        font-size: 1.5rem;
+        white-space: nowrap;
+        font-size: 1.5rem;        
+        @media only screen and (max-width: 365px){
+            font-size: 1rem;
+        }
     }
 
     .body {

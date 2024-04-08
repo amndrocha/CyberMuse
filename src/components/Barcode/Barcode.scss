@@ -1,26 +1,19 @@
-.barcode {
-    display: flex;
-    gap: 2px;
-    width: auto;
-    overflow: visible;
-}
-
 .bar0 {
     width: 0.5px;
-    background-color: var(--color-darkest);
+    background-color: var(--color-text-main);
 }
 
 .bar1 {
     width: 1px;
-    background-color: var(--color-darkest);
+    background-color: var(--color-text-main);
 }
 
 .bar2 {
     width: 1.5px;
-    background-color: var(--color-darkest);
+    background-color: var(--color-text-main);
 }
 
 .bar3 {
     width: 2px;
-    background-color: var(--color-darkest);
+    background-color: var(--color-text-main);
 }

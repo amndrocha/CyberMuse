@@ -7,6 +7,10 @@
     pointer-events: auto;
 }
 
+.click:hover {
+    color: var(--color-primary);
+}
+
 .no-selection {    
     user-select: none;
 }

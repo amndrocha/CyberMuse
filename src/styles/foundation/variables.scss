@@ -2,10 +2,6 @@
     // screen size
     --sm: 375px;
     --m: 667 px;
-    //padding
-    --page-padding-l: 10rem;
-    --page-padding-m: 5rem;
-    --page-padding-s: 0.5rem;
 
     --padding-xs: 0.375rem;
     --padding-s: 0.625rem;
@@ -22,6 +18,18 @@
     --logo-height: 255px; 
 
     --color-logo: var(--color-primary);
+    
+    //padding page
+    --px-page: 3rem;
+    --py-page: 3rem;
+    @media screen and (orientation: portrait) {
+        --px-page: 1rem;
+        --py-page: 1rem;
+    }    
+    @media only screen and (max-width: 310px){
+        --px-page: 0.5rem;
+        --py-page: 0.5rem;
+    }
 }
 
 .light-theme {
@@ -59,6 +67,11 @@
     .desktop-hide {
         display: none;
     } 
+    .mobile-hide {
+        @media screen and (orientation: portrait) {
+            display: none;
+        }
+    }
 }
 
 .logo-color {
