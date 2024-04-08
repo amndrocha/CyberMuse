@@ -18,7 +18,7 @@
 }
 
 .d-none {
-    display: none;
+    display: none !important;
 }
 
 .justify-center {
@@ -26,19 +26,19 @@
 }
 
 .justify-end {
-    justify-content: flex-end;
+    justify-content: flex-end !important;
 }
 
 .justify-start {
-    justify-content: flex-start;
+    justify-content: flex-start !important;
 }
 
 .justify-between {
-    justify-content: space-between;
+    justify-content: space-between !important;
 }
 
 .align-center {
-    align-items: center;
+    align-items: center !important;
 }
 
 .center {

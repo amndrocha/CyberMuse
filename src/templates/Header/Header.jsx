@@ -38,9 +38,9 @@ export default function Header() {
     
     const menuMobile = () => {
         return(
-        <button className='menu-btn-mobile bk-none desktop-hide'>
+        <div className='menu-btn-mobile bk-none desktop-hide' onClick={handleMenu}>
             MENU
-        </button>
+        </div>
         )
     }
 

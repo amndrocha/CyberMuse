@@ -6,17 +6,11 @@
     overflow: clip;
 }
 
-.mobile {
-    .sidebar-wrapper {
-        display: none;
-    }
-}
-
 .sidebar-wrapper {
     display: flex;
-    overflow: clip;     
+    overflow: clip; 
     @media screen and (orientation: portrait) {
-        display: none;
+        display: none !important;
     }
 
 }

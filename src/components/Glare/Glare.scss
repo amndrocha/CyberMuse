@@ -41,13 +41,13 @@
     top: 0;
     width: fit-content;
     height: fit-content;
-    background: linear-gradient(300deg, rgba(255,255,255,0) 10%, rgba(255, 255, 255, 0.3) var(--light-angle), rgba(255,255,255,0) 95%);
+    background: linear-gradient(300deg, rgba(255,255,255,0) 10%, rgba(255, 255, 255, 0.5) var(--light-angle), rgba(255,255,255,0) 95%);
     border-radius: var(--radius);
     color: transparent;
 }
 
 .glare:active {
-    background: linear-gradient(300deg, rgba(255,255,255,0) 10%, rgba(255, 255, 255, 0.4) var(--light-angle), rgba(255,255,255,0) 90%);
+    background: linear-gradient(300deg, rgba(255,255,255,0) 10%, rgba(255, 255, 255, 0.7) var(--light-angle), rgba(255,255,255,0) 90%);
 }
 
 .glare:hover {
