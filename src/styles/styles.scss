@@ -36,8 +36,9 @@ body {
 }
 
 input {
-    max-width: 100%;
-    width: 13rem;
+    display: flex;
+    width: 100%;
+    min-width: 0;
     border: none;
     border-radius: 20px;
     border: 3px solid var(--color-lightest);

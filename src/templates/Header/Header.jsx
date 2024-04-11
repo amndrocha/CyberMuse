@@ -62,7 +62,7 @@ export default function Header() {
                     >EN</div>
                 </div>
                 <div className="no-selection center click"
-                style={{lineHeight: theme == 'dark-theme' ? '' : '10px', width: '1rem'}}
+                style={{lineHeight: theme == 'dark-theme' ? '-10px' : '', width: '1rem'}}
                 onClick={() => dispatch(switchTheme())}>
                     {theme === 'dark-theme' ? '☼' : '☾'}
                 </div>

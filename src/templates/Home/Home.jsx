@@ -80,7 +80,7 @@ function Home() {
                   <button><span className='opacity-0'>{emailSent ? t('home.email.confirmation') : 'ok'}</span></button>
                   <div className='glare'>
                     <button onClick={() => setEmailSent(true)} className='glare-dummy'>
-                    <span className={emailSent ? 'dissappear slow opacity-0' : ''}>ok</span>
+                      <span className={emailSent ? 'dissappear slow opacity-0' : ''}>ok</span>
                       <span className={emailSent ? 'appear fit' : 'd-none'} style={{marginLeft: '-0.5rem'}}>{t('home.email.confirmation')}</span>
                     </button>
                   </div>            
@@ -88,8 +88,8 @@ function Home() {
             </div>
           </div>
 
-          <div className='max-width d-flex center mobile-hide'>
-            <div className='center fit g-0'>
+          <div className='max-width d-flex justify-end mobile-hide'>
+            <div className='d-flex justify-end fit g-0'>
               <span className={emailSent ? 'dissappear' : ''}>
                 <Glare radius='20px' element={() => emailInput(false)} dummy={() => emailInput(true)}/>
               </span>
@@ -98,16 +98,11 @@ function Home() {
                   <button><span className='opacity-0'>{emailSent ? t('home.email.confirmation') : 'ok'}</span></button>
                   <div className='glare'>
                     <button onClick={() => setEmailSent(true)} className='glare-dummy'>
-                    <span className={emailSent ? 'dissappear slow opacity-0' : ''}>ok</span>
+                      <span className={emailSent ? 'dissappear slow opacity-0' : ''}>ok</span>
                       <span className={emailSent ? 'appear fit' : 'd-none'} style={{marginLeft: '-0.5rem'}}>{t('home.email.confirmation')}</span>
                     </button>
                   </div>            
-              </div>
-
-
-
-
-              
+              </div>              
             </div>        
           </div>                
         </div>   
