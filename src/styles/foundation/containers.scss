@@ -136,6 +136,16 @@
     bottom: 0;
 }
 
+.sticky-top {
+    position: sticky !important;
+    top:0;
+}
+
+.sticky-bottom {
+    position: sticky !important;
+    bottom: 0;
+}
+
 .overlay {
     position: fixed;
     height: 100vh;

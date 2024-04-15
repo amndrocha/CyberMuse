@@ -84,9 +84,8 @@ export default function Header() {
     return (
         <div className={theme+device+home+' background pointer-events-none'}>
             <div className='page bk-none pointer-events-none justify-end'>
-                <div className="page-content justify-end">
-                    <Sparkles element1={controls} element2={menuMobile}/>
-                
+                <div className="page-content justify-end sticky-top">
+                    <Sparkles element1={controls} element2={menuMobile}/>                
                 </div>
 
                 <div className="mobile-hide sidebar-wrapper sidebar-tag max-height center">
