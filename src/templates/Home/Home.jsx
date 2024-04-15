@@ -95,11 +95,12 @@ function Home() {
               </span>
 
               <div className='fit relative clip corner glare-shadow p1' style={{'--radius': '20px'}}>
-                  <button><span className='opacity-0'>{emailSent ? t('home.email.confirmation') : 'ok'}</span></button>
+                  <button>
+                    <span className='opacity-0' style={{marginLeft: '-0.5rem'}}>{emailSent ? t('home.email.confirmation') : 'ok'}</span>
+                    </button>
                   <div className='glare'>
                     <button onClick={() => setEmailSent(true)} className='glare-dummy'>
-                      <span className={emailSent ? 'dissappear slow opacity-0' : ''}>ok</span>
-                      <span className={emailSent ? 'appear fit' : 'd-none'} style={{marginLeft: '-0.5rem'}}>{t('home.email.confirmation')}</span>
+                      <span style={{marginLeft: '-0.5rem'}}>{emailSent ? t('home.email.confirmation') : 'ok'}</span>
                     </button>
                   </div>            
               </div>              
