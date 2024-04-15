@@ -5,6 +5,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { defineDevice, defineLanguage, switchTheme } from "../../features/sharedSlice";
 import './Header.scss';
 import { Sparkles } from "../../components/Sparkles/Sparkles";
+import DarkModeIcon from "../../assets/icons/DarkModeIcon";
+import LightModeIcon from "../../assets/icons/LightModeIcon";
 
 export default function Header() {
     const dispatch = useDispatch();
@@ -56,17 +58,16 @@ export default function Header() {
     const controls = () => {
         return (
             <div className='d-flex g-1 hug-height pointer-events-auto'>
+                <div className="d-flex center click" style={{width: '1rem'}}
+                onClick={() => dispatch(switchTheme())}>
+                    {theme === 'dark-theme' ? <LightModeIcon/> : <DarkModeIcon/>}
+                </div>
                 <div className="d-flex hug-width g-0 click no-selection" onClick={switchLanguage}>
                     <div className={language === 'pt' ? '' : 'disabled-text'}
                     >PT</div>
                     <span>|</span>
                     <div className={language === 'en' ? '' : 'disabled-text'}
                     >EN</div>
-                </div>
-                <div className="no-selection center click"
-                style={{lineHeight: theme == 'dark-theme' ? '-10px' : '', width: '1rem'}}
-                onClick={() => dispatch(switchTheme())}>
-                    {theme === 'dark-theme' ? '☼' : '☾'}
                 </div>
             </div>              
         )
