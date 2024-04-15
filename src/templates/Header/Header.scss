@@ -60,7 +60,7 @@
     overflow: visible;
     height: 100vh;
     width:100vw;
-    background: radial-gradient(circle, var(--color-terciary) -20%, rgba(0,0,0,0) 70%);
+    background: radial-gradient(circle, var(--color-tertiary) -20%, rgba(0,0,0,0) 70%);
     mix-blend-mode: hard-light;
 }
 
@@ -68,7 +68,7 @@
 .light-theme {
     .blur-overlay {
         mix-blend-mode: hard-light;
-        background: radial-gradient(circle, var(--color-terciary) 30%, rgba(0,0,0,0) 100%);
+        background: radial-gradient(circle, var(--color-tertiary) 30%, rgba(0,0,0,0) 100%);
     }
 }
 

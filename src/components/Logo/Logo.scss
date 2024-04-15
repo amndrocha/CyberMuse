@@ -3,17 +3,15 @@
     background: var(--color-primary);
     mask-repeat: no-repeat;
     -webkit-mask-repeat: no-repeat;
-    mask-type: alpha;
-    -webkit-mask-type: alpha;
 
 }
 
 .cyber {
-    -webkit-mask-image: url('./assets/cyber.svg');
+    -webkit-mask-box-image: url('./assets/cyber.svg');
     mask-image: url('./assets/cyber.svg');
 }
 
 .muse {
-    -webkit-mask-image: url('./assets/muse.svg');
+    -webkit-mask-box-image: url('./assets/muse.svg');
     mask-image: url('./assets/muse.svg');
 }

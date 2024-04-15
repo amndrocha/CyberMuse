@@ -8,9 +8,8 @@
     //color
     --color-primary: #020090;
     --color-secondary: #e60079;
-    --color-terciary: #e4a348;
-    --color-quartenery: #b9beb0;
-    --color-quintenery: #A0B10B;
+    --color-tertiary: #e4a348;
+    --color-quaternary: #b9beb0;
     --color-darkest: #1E0147;
     --color-main-contrast: var(--color-darkest);
     --color-lightest: #f3f3f3;
@@ -37,7 +36,7 @@
 .light-theme {
     @extend #root;
     --color-contrast: var(--color-darkest);
-    --color-background: var(--color-quartenery);
+    --color-background: var(--color-quaternary);
     --color-background-contrast: var(--color-darkest);
     --color-text-main: var(--color-darkest);
     .light-hide {
@@ -48,11 +47,11 @@
 .dark-theme {
     @extend #root;
     --color-background: var(--color-darkest);
-    --color-background-contrast: var(--color-quartenery);
+    --color-background-contrast: var(--color-quaternary);
     --color-contrast: var(--color-lightest);
     --color-text-main: var(--color-lightest);
-    --color-primary: var(--color-terciary);
-    --color-text-heading-1: var(--color-terciary);
+    --color-primary: var(--color-tertiary);
+    --color-text-heading-1: var(--color-tertiary);
     .dark-hide {
         display: none;
     } 
