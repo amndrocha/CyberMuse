@@ -14,10 +14,12 @@ export default function Header() {
     const { pathname } = location;
     let home = pathname == '/' ? ' home' : '';
 
-    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-        dispatch(defineDevice());
-    }
-    dispatch(defineLanguage(language));
+    useEffect(() => {
+        if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+            dispatch(defineDevice());
+        }
+        dispatch(defineLanguage(language));
+    }, [dispatch, language]);
 
     const handleMenu = () => {
         setMenu(!menu);
