@@ -1,4 +1,4 @@
-.section-width {
+.home-section {
     --size: 10rem;
     width: 100%;
     max-width: calc(var(--size) + ((var(--size) * 81.3) / 100));
@@ -30,4 +30,8 @@
 .slogan-dummy {
    width: 30%;
    opacity: 0;
+}
+
+.filler {
+    height: 100%;
 }

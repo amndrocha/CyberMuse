@@ -62,50 +62,39 @@ function Home() {
 
   return (
     <div className={theme+' page'}>
+
       <div className='page-content'>
-        <div className='flex-column justify-between max-height'>
-          <div className='flex-column g-0 section-width' style={{paddingTop: '3rem'}}>
+
+        <div className='flex-column justify-between max-height align-start-dinamic g-1'>
+
+          <div className='flex-column g-0 home-section' style={{paddingTop: '3rem'}}>
             <Logo/>
             <div className='slogan-wrapper pointer-events-none'>
               <img className='slogan' src={'./assets/slogan1-'+language+'.svg'}/>
               <img className='slogan-dummy' src={'./assets/slogan1-'+language+'.svg'}/>
             </div>
-            <div className='body'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente beatae voluptates accusantium perferendis, vitae cumque earum! Asperiores doloribus voluptatem officiis. Cupiditate exercitationem qui aut, labore laborum culpa ratione repellat reiciendis!</div> 
-            <div className='center fit g-0 desktop-hide' style={{marginTop: '1rem'}}>
-              <span className={emailSent ? 'dissappear' : ''}>
-                <Glare radius='20px' element={() => emailInput(false)} dummy={() => emailInput(true)}/>
-              </span>
-
-              <div className='fit relative clip corner glare-shadow p1' style={{'--radius': '20px'}}>
-                  <button><span className='opacity-0'>{emailSent ? t('home.email.confirmation') : 'ok'}</span></button>
-                  <div className='glare'>
-                    <button onClick={() => setEmailSent(true)} className='glare-dummy'>
-                      <span className={emailSent ? 'dissappear slow opacity-0' : ''}>ok</span>
-                      <span className={emailSent ? 'appear fit' : 'd-none'} style={{marginLeft: '-0.5rem'}}>{t('home.email.confirmation')}</span>
-                    </button>
-                  </div>            
-              </div>
-            </div>
+            <div className='body'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sapiente beatae voluptates accusantium perferendis, vitae cumque earum! Asperiores doloribus voluptatem officiis. Cupiditate exercitationem qui aut, labore laborum culpa ratione repellat reiciendis!</div>
           </div>
 
-          <div className='max-width d-flex justify-end mobile-hide'>
-            <div className='d-flex justify-end fit g-0'>
+          <div className='justify-end-dinamic max-width d-flex'>
+            <div className='justify-end-dinamic d-flex fit g-0'>
               <span className={emailSent ? 'dissappear' : ''}>
                 <Glare radius='20px' element={() => emailInput(false)} dummy={() => emailInput(true)}/>
               </span>
-
               <div className='fit relative clip corner glare-shadow p1' style={{'--radius': '20px'}}>
                   <button>
-                    <span className='opacity-0' style={{marginLeft: '-0.5rem'}}>{emailSent ? t('home.email.confirmation') : 'ok'}</span>
+                    <span className='opacity-0'>{emailSent ? t('home.email.confirmation') : 'ok'}</span>
                     </button>
                   <div className='glare'>
                     <button onClick={() => setEmailSent(true)} className='glare-dummy'>
-                      <span style={{marginLeft: '-0.5rem'}}>{emailSent ? t('home.email.confirmation') : 'ok'}</span>
+                      <span>{emailSent ? t('home.email.confirmation') : 'ok'}</span>
                     </button>
                   </div>            
               </div>              
             </div>        
-          </div>                
+          </div>
+          <div className='filler desktop-hide'></div>
+
         </div>   
 
       </div>

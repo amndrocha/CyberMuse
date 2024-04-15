@@ -29,12 +29,33 @@
     justify-content: flex-end !important;
 }
 
+.justify-end-dinamic {
+    justify-content: flex-end !important;  
+    @media screen and (orientation: portrait) {
+        justify-content: center !important;
+    }
+}
+
 .justify-start {
     justify-content: flex-start !important;
 }
 
+.justify-start-dinamic {
+    justify-content: flex-start !important;
+    @media screen and (orientation: portrait) {
+        justify-content: center !important;
+    }
+}
+
 .justify-between {
     justify-content: space-between !important;
+}
+
+.justify-between-dinamic {
+    justify-content: space-between !important;  
+    @media screen and (orientation: portrait) {
+        justify-content: center !important;
+    }
 }
 
 .align-center {
@@ -53,6 +74,12 @@
     align-items: flex-end !important;
 }
 
+.align-start-dinamic {
+    align-items: flex-start !important;
+    @media screen and (orientation: portrait) {
+        align-items: center !important;
+    }
+}
 
 .align-end {
     align-items: flex-end !important;

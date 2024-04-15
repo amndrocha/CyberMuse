@@ -144,10 +144,3 @@ button:active {
     height: 0.5rem;
 }
 
-.center-mobile {
-    @media screen and (orientation: portrait) {
-        align-items: start;
-        gap: 3rem
-    }
-    
-}
