@@ -1,0 +1,99 @@
+* { 
+    --face-size: 13;
+    --skin-color: #ffbf97;
+    --eye-rotation: 0deg;
+    --eye-gap: 30px;
+    --eye-height: -40px;
+    --eye-size: 17;
+    --iris-height: -9px;
+    --iris-size: 22px;
+    --pupil-size: 10px;
+    --shade-opacity: 1;
+    --shade-brightness: 0;
+    --iris-hue:
+}
+
+.face-wrapper {
+    position: absolute;
+    z-index: 100000;
+}
+
+.face-frame {
+    height: calc((var(--face-size) / 100) * 1825px);
+    width: calc((var(--face-size) / 100) * 1355px);
+    background-color: var(--skin-color);
+    mask-image: url('items/face-shape.png');
+    mask-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.face-shade {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('items/face-shade.png');
+    background-size: 155%;
+    background-position: 50% 80%;
+    filter: brightness(var(--shade-brightness));
+    opacity: var(--shade-opacity);
+}
+
+.eyes-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--eye-height);
+    height: 50px;
+    width: 100%;
+}
+
+.eyes {
+    position: absolute;
+    align-items: center;
+    display: flex;
+    gap: var(--eye-gap);
+    height: 50px;
+}
+
+.eye {
+    height: calc((var(--eye-size) / 100) * 79px);
+    width: calc((var(--eye-size) / 100) * 279px);
+    transform: rotate(var(--eye-rotation));
+}
+
+.mirrored {
+    transform: scaleX(-1) rotate(var(--eye-rotation));
+}
+
+
+.eyeball {
+    @extend .eye;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+    background-color: white;
+    mask-image: url('items/eye-shape.png');
+    mask-size: cover;
+}
+
+.iris {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: var(--iris-height);
+    width: var(--iris-size);
+    height: var(--iris-size);
+}
+
+.pupil {
+    position: absolute;
+    width: var(--pupil-size);
+    height: var(--pupil-size);
+}
+
+.iris-color {
+    position: absolute;
+    filter: brightness(5);
+}
