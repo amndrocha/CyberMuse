@@ -10,7 +10,7 @@ function FaceEditor() {
   const ref = useRef();
   const [isDragging, setIsDragging] = useState(false);
   const [triggered, setTriggered] = useState(null);
- 
+
   const triggerEyeGap = (e) => {
     setTriggered('eyeGap');
     setInitialPos(e.clientX - ref.current.getBoundingClientRect().left);
@@ -61,6 +61,23 @@ function FaceEditor() {
       });
   }, [ref]);
 
+  useEffect(() => {
+    const makeUnselectable = (element) => {
+      if (element) {
+        element.classList.add('unselectable');
+        element.setAttribute('unselectable', 'on');
+        element.setAttribute('draggable', 'false');
+        element.addEventListener('dragstart', (e) => e.preventDefault());
+
+        Array.from(element.querySelectorAll('*')).forEach(child => {
+          child.setAttribute('draggable', 'false');
+          child.setAttribute('unselectable', 'on');
+        });
+      }
+    };
+
+    makeUnselectable(ref.current);
+  }, []);
 
   return (
     <div className='face-wrapper'>
@@ -69,11 +86,11 @@ function FaceEditor() {
         <div id='eyes' className="eyes-wrapper mirror" style={{ top: eyeHeight + 'px' }}>
           <div className='eyes'>
             <div className="mirrored eye" onMouseDown={triggerEyeHeight}>
-              <div className='eyeball'>
+              <div className='eyeball selected'>
                 <div className='iris'>
-                  <img className='iris-base' src="./items/iris-base.png"/>
-                  <img className='iris-color' src="./items/iris-color.png"/>
-                  <img className='pupil' src="./items/pupil.png"/>
+                  <img draggable="false" className='iris-base' src="./items/iris-base.png"/>
+                  <img draggable="false" className='iris-color' src="./items/iris-color.png"/>
+                  <img draggable="false" className='pupil' src="./items/pupil.png"/>
                 </div>
               </div>
             </div>
@@ -81,14 +98,14 @@ function FaceEditor() {
             <div className="eye" onMouseDown={triggerEyeHeight}>
               <div className='eyeball'>
                 <div className='iris'>
-                  <img className='iris-base' src="./items/iris-base.png"/>
-                  <img className='iris-color' src="./items/iris-color.png"/>
-                  <img className='pupil' src="./items/pupil.png"/>
+                  <img draggable="false" className='iris-base' src="./items/iris-base.png"/>
+                  <img draggable="false" className='iris-color' src="./items/iris-color.png"/>
+                  <img draggable="false" className='pupil' src="./items/pupil.png"/>
                 </div>
               </div>
             </div>
           </div>
-          <img className="opacity-0 eye" src='./items/eye-shape.png'/>
+          <img draggable="false" className="opacity-0 eye" src='./items/eye-shape.png'/>
         </div>
       </div>
       <button style={{ fontSize: '12px', marginTop: '20px' }} onClick={downloadImage}>Download Face</button>
