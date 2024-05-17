@@ -9,7 +9,6 @@ export default function About() {
       <div className={theme+' page'}>
           <div className="page-content center">
             {t('header.about')} 
-            <FaceEditor></FaceEditor>
           </div>
           <div className="sidebar-dummy"></div>
       </div>
