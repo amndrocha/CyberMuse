@@ -101,9 +101,9 @@ function FaceEditor() {
                 <div className={eyesSelected == 'left-eye' ? "mini-button rotate selected" : "d-none"}><RotateIcon/></div>
                 <div className='eyeball'>
                   <div className='iris'>
-                    <img draggable="false" className='iris-base' src="./items/iris-base.png"/>
-                    <img draggable="false" className='iris-color' src="./items/iris-color.png"/>
-                    <img draggable="false" className='pupil' src="./items/pupil.png"/>
+                    <img draggable="false" className='iris-base' src="items/iris-base.png"/>
+                    <img draggable="false" className='iris-color' src="items/iris-color.png"/>
+                    <img draggable="false" className='pupil' src="items/pupil.png"/>
                   </div>
                 </div>
               </div>
@@ -115,9 +115,9 @@ function FaceEditor() {
               <div className="eye" onMouseDown={triggerEyeHeight}>
                 <div className='eyeball'>
                   <div className='iris'>
-                    <img draggable="false" className='iris-base' src="./items/iris-base.png"/>
-                    <img draggable="false" className='iris-color' src="./items/iris-color.png"/>
-                    <img draggable="false" className='pupil' src="./items/pupil.png"/>
+                    <img draggable="false" className='iris-base' src="items/iris-base.png"/>
+                    <img draggable="false" className='iris-color' src="items/iris-color.png"/>
+                    <img draggable="false" className='pupil' src="items/pupil.png"/>
                   </div>
                 </div>
               </div>
