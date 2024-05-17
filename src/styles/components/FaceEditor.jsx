@@ -122,7 +122,7 @@ function FaceEditor() {
                 </div>
               </div>
             </div>
-            <img draggable="false" className="opacity-0 eye" src='./items/eye-shape.png'/>
+            <img draggable="false" className="opacity-0 eye" src='items/eye-shape.png'/>
           </div>      
           <div className='chin'></div>    
         </div>
