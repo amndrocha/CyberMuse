@@ -13,7 +13,6 @@ function FaceEditor() {
   const [eyesSelected, setEyesSelected] = useState(false);
   const [initialPos, setInitialPos] = useState(0);
   const ref = useRef();
-  const [isDragging, setIsDragging] = useState(false);
   const [triggered, setTriggered] = useState(null);
 
   
