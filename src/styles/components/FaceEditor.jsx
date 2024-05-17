@@ -90,7 +90,7 @@ function FaceEditor() {
   }, []);
 
   return (
-    <div className='face-wrapper'>
+    <div className='face-wrapper d-flex flex-column align-center'>
       <div className="face-frame" ref={ref} onMouseMove={handleMouseMove} onMouseUp={handleMouseUp}>
         <div className='face-shade'></div>
         <div className='face-container d-flex flex-column'>
